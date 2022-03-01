@@ -42,9 +42,11 @@ recaptcha3.key = 'XXXXXXXX-XXXXXXXX'
 recaptcha3.secret = 'XXXXXXXX-XXXXXXXX'
 recaptcha3.scoreThreshold = 0.5
 
+```
+
 In the /app/Config/Validation.php file you need to add settings for validator:
 
-```
+```php
 public $ruleSets = [
     ...
     \Daycry\ReCaptcha\Validation\ReCaptchaRules::class
@@ -53,7 +55,7 @@ public $ruleSets = [
 
 ### Rendering ReCaptcha v2
 
-```
+```php
 helper(['form', 'reCaptcha']);
 
 echo form_open();
@@ -67,7 +69,7 @@ echo form_close();
 
 ### Rendering ReCaptcha v3
 
-```
+```php
 helper(['form', 'reCaptcha']);
 
 echo form_open();
@@ -83,17 +85,19 @@ echo form_close();
 If you are using Twig: https://github.com/daycry/twig
 
 add helper in array of helpers in the controller
-```
+
+```php
 helper(['form', 'reCaptcha']);
 ```
 
 add **'reCaptcha3'** in **functions_safe** in config file and call the helper funcion.
-```
+
+```php
 public $functions_safe = [ 'form_hidden', 'form_open', 'form_close', 'csrf_token', 'csrf_hash', 'url_title', 'reCaptcha3' ];
 ```
 and call the function in twig file.
 
-```
+```php
 {{ reCaptcha3( 'reCaptcha', {'id' : 'recaptcha_v3'}, {'action' : 'signup'} ) | raw }}
 ```
 
@@ -101,7 +105,7 @@ and call the function in twig file.
 
 ### Checking ReCaptcha in a model:
 
-```
+```php
 public $validationRules = [
     'reCaptcha2' => 'required|reCaptcha2[]'
     'reCaptcha3' => 'required|reCaptcha3[contactForm,0.9]'
