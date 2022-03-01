@@ -20,7 +20,7 @@ $psr4 = [
     'Config'      => APPPATH . 'Config',
     APP_NAMESPACE => APPPATH,
     'App'         => APPPATH,
-    'Daycry\ReCaptcha' => APPPATH .'Libraries/recaptcha/src',
+    'Daycry\ReCaptcha' => APPPATH .'ThirdParty/recaptcha/src',
 ];
 
 ```
