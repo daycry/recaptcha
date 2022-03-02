@@ -24,6 +24,14 @@ $psr4 = [
 ];
 
 ```
+## Setup
+
+Run command:
+
+	> php spark recaptcha:publish
+
+This command will copy a config file to your app namespace.
+
 ## Configuration
 
 In the .env file you need to add your personal ReCaptcha keys.
